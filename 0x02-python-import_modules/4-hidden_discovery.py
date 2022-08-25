@@ -5,4 +5,3 @@ if __name__ == "__main__":
     for surprise in surprises:
         if surprise[0] != '_' and surprise[1] != '_':
             print("{}".format(surprise))
-
