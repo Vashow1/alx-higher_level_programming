@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-alphabet = [chr(i) for i in range(ord('A'), ord('Z')+1)]
-print(*alphabet, sep='')
+import string
+print(string.ascii_uppercase)
