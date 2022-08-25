@@ -11,5 +11,3 @@ if __name__ == "__main__":
         print(":\n1: {}".format(sys.argv[1]))
     else:
         print("s.")
-
-
