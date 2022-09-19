@@ -50,8 +50,11 @@ class Rectangle:
     def __str__(self):
         """Defines what prints when str() method is called"""
         output = ""
+        if self.__height == 0 or self.__width == 0:
+            return output
         for i in range(self.__height):
             for i in range(self.__width):
                 output += "#"
-            output += '\n'
+            if (i != self.__height - 1):
+                output += '\n'
         return (output)
