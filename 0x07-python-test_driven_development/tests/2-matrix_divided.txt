@@ -28,7 +28,7 @@ Works if list is made up of floats
 [[0.4, -0.8, 1.2], [-2.2, 2.4, 2.7]]
 
 Testing to see if it raises error if it is parsed
-a list that is not of ints or float or if it is not populated
+a list that is not of ints or float
 
 :
 
@@ -48,6 +48,15 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
+>>> ex = "string"
+>>> print(matrix_divided(ex, 3))
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Checking that the matrix is populated and not empty
+
+:
+
 >>> ex = []
 >>> print(matrix_divided(ex, 3))
 Traceback (most recent call last):
@@ -55,6 +64,8 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 Though an empty list of lists will pass
 since its len is >0
+
+:
 
 >>> ex = [[]]
 >>> print(matrix_divided(ex, 3))
