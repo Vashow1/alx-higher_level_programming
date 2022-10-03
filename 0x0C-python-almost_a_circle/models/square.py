@@ -24,3 +24,42 @@ class Square(Rectangle):
     def __str__(self):
         """Defines the behaviour on print(<square instance>)"""
         return (f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}")
+
+    def update(self, *args, **kwargs):
+        """
+        Updates the values of the square
+        similar to the one of the parent class but with
+        one less value since width == height
+
+        """
+        if args != 0 and len(args) != 0:
+            index = 0
+            for arg in args:
+                if index == 0:
+                    if arg is None:
+                        self.__init__(self.size, self.x, self.y)
+                    else:
+                        self.id = arg
+                if index == 1:
+                    self.size = arg
+                if index == 2:
+                    self.x = arg
+                if index == 3:
+                    self.y = arg
+
+                index += 1
+
+        elif kwargs != 0 and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    if value is None:
+                        self.__init__(self.size, self.x, self.y)
+                    else:
+                        self.id = value
+                if key == "size":
+                    self.size = value
+
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
