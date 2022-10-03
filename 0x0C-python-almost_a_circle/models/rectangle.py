@@ -96,14 +96,15 @@ class Rectangle(Base):
         return (f"[Rectangle] ({self.id}) {self.x}/{self.y} "
                 f"- {self.width}/{self.height}")
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         Updates the values of rectangle
         The index and iteration provides for a way to
         ensure that there is a value at the requested args
         index
+        kwargs can only be implemented if args is unavailable
         """
-        if args and len(args) != 0:
+        if args != 0 and len(args) != 0:
             index = 0
             for arg in args:
                 if index == 0:
@@ -120,3 +121,19 @@ class Rectangle(Base):
                 elif index == 4:
                     self.y = arg
                 index += 1
+
+        elif kwargs != 0 and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    if value is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
