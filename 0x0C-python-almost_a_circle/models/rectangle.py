@@ -74,3 +74,13 @@ class Rectangle(Base):
     def area(self):
         """Computes the area to a rectangle instance"""
         return (self.height * self.width)
+
+    def display(self):
+        """a method that creates a rectangle out of pound signs"""
+        if self.width > 0 and self.height > 0:
+            for i in range(self.height):
+                for i in range(self.width):
+                    print('#', end="")
+                print()
+        else:
+            print()
