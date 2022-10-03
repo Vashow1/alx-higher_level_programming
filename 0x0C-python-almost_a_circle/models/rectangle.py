@@ -95,3 +95,28 @@ class Rectangle(Base):
         """The magic method that defines behavior on printing of class"""
         return (f"[Rectangle] ({self.id}) {self.x}/{self.y} "
                 f"- {self.width}/{self.height}")
+
+    def update(self, *args):
+        """
+        Updates the values of rectangle
+        The index and iteration provides for a way to
+        ensure that there is a value at the requested args
+        index
+        """
+        if args and len(args) != 0:
+            index = 0
+            for arg in args:
+                if index == 0:
+                    if arg is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif index == 1:
+                    self.width = arg
+                elif index == 2:
+                    self.height = arg
+                elif index == 3:
+                    self.x = arg
+                elif index == 4:
+                    self.y = arg
+                index += 1
