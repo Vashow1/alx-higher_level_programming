@@ -78,7 +78,13 @@ class Rectangle(Base):
     def display(self):
         """a method that creates a rectangle out of pound signs"""
         if self.width > 0 and self.height > 0:
+            if self.y > 0:
+                for ind in range(self.y):
+                    print()
             for i in range(self.height):
+                if self.x > 0:
+                    for ind in range(self.x):
+                        print(' ', end="")
                 for i in range(self.width):
                     print('#', end="")
                 print()
