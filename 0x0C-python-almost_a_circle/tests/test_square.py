@@ -8,7 +8,7 @@ class TestBase(unittest.TestCase):
 
     def test_basic_setup(self):
         """This fn checks whether the class is set up correct"""
-        s1 = square(10)
+        s1 = Square(10)
         s2 = Square(13)
         """
         Test if it gives it an id value equal to 1 since it is first
