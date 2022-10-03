@@ -45,7 +45,8 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """
-        returns an instance with all attributes already set based on **dictionary
+        returns an instance with all attributes already
+        set based on **dictionary
         note size, width and length must be > 0 hence the dummy values used
 
         """
@@ -61,7 +62,9 @@ class Base:
     def load_from_file(cls):
         """returns a list of instances:"""
         filename = cls.__name__ + ".json"
-
-        with open(filename, "r") as a_file:
-            list_dict = Base.from_json_string(a_file.read())
-            return [cls.create(**dictionary) for dictionary in list_dict]
+        try:
+            with open(filename, "r") as a_file:
+                list_dict = Base.from_json_string(a_file.read())
+                return [cls.create(**dictionary) for dictionary in list_dict]
+        except IOError:
+            return []
