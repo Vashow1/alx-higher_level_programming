@@ -4,8 +4,9 @@
 
 def matrix_divided(matrix, div):
     """divides all elements of a matrix."""
-    if matrix == None or len(matrix) == 0:
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+    if matrix is None or len(matrix) == 0:
+        raise TypeError("matrix must be a matrix"
+                        " (list of lists) of integers/floats")
 
     end = len(matrix)
     index = 0
@@ -18,20 +19,23 @@ def matrix_divided(matrix, div):
     for lst in matrix:
 
         if type(lst) != list:
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
-        
+            raise TypeError("matrix must be a matrix"
+                            " (list of lists) of integers/floats")
+
         length = len(lst)
         if index != (end - 1):
             if length != len(matrix[index + 1]):
-                    raise TypeError("Each row of the matrix must have the same size")
+                raise TypeError("Each row of the matrix"
+                                " must have the same size")
 
         innerDivided = []
         for elem in lst:
             if type(elem) not in [int, float]:
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError("matrix must be a matrix"
+                                " (list of lists) of integers/floats")
             result = elem / div
             innerDivided.append(round(result, 2))
-        
+
         divided.append(innerDivided)
         index += 1
 
