@@ -73,5 +73,25 @@ TypeError: 'NoneType' object is not iterable
 Traceback (most recent call last):
 TypeError: list expected at most 1 argument, got 2
 
+Checking that the class retains the fact that it
+can accept lists of mixed types or of other types than numericals
+
+:
+
+>>> ex = MyList(['Alx', 'the', 'No', 1, 'School'])
+
+Though it should through an error when trying print_sorted with mixed types
+
+>>> ex.print_sorted()
+Traceback (most recent call last):
+TypeError: '<' not supported between instances of 'int' and 'str'
+
+Testing insertion using index
+
+>>> ex[3] = 'one'
 >>> print(ex)
-[0, 3, 4, 2]
+['Alx', 'the', 'No', 'one', 'School']
+
+It should be noted that a list of strings will be sorted without error
+>>> ex.print_sorted()
+['Alx', 'No', 'School', 'one', 'the']
