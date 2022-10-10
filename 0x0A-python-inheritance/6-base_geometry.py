@@ -4,7 +4,7 @@
 
 class BaseGeometry:
     """Preliminary declaration of class"""
-    
+
     def area(self):
         """Area of the base geometry"""
 
