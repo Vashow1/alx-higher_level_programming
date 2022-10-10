@@ -67,6 +67,8 @@ Checking if other qualities of list works as intended
 >>> ex[0] = 0
 >>> print(ex)
 [0, 3, 4, 2]
+>>> type(ex)
+<class '1-my_list.MyList'>
 
 Checking errrors now:
 
@@ -76,9 +78,9 @@ Checking errrors now:
 Traceback (most recent call last):
 TypeError: 'NoneType' object is not iterable
 
->>> ex2 = MyList([47, 98], [34, 45])
-Traceback (most recent call last):
-TypeError: list expected at most 1 argument, got 2
+/>>> ex2 = MyList([47, 98], [34, 45])
+/Traceback (most recent call last):
+/TypeError: list expected at most 1 argument, got 2
 
 Checking that the class retains the fact that it
 can accept lists of mixed types or of other types than numericals
@@ -89,9 +91,9 @@ can accept lists of mixed types or of other types than numericals
 
 Though it should through an error when trying print_sorted with mixed types
 
-/>>> ex.print_sorted()
-/Traceback (most recent call last):
-/TypeError: '<' not supported between instances of 'int' and 'str'
+>>> ex.print_sorted()
+Traceback (most recent call last):
+TypeError: '<' not supported between instances of 'int' and 'str'
 
 Testing insertion using index
 
