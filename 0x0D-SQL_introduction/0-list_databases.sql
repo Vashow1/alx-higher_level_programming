@@ -1,3 +1,2 @@
--- Creates the database hbtn_0c_0 in your MySQL server
--- because Batch 3 is the best!
-show DATABASES;
+-- lists all databases of your MySQL server
+SHOW DATABASES;
