@@ -7,7 +7,7 @@ module.exports = class Square extends require('./5-square') {
     } else {
       for (let i = 0; i < this.width; i++) {
         for (let j = 0; j < this.width; j++) {
-          process.stdout.write('C');
+          process.stdout.write(c);
         }
         process.stdout.write('\n');
       }
