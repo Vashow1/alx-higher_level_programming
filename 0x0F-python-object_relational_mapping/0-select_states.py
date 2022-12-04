@@ -1,10 +1,8 @@
 #!/usr/bin/python3
+"""lists all states from the database hbtn_0e_0_usa"""
 import MySQLdb
 import sys
-"""
- lists all states from the database hbtn_0e_0_usa
 
-"""
 if __name__ == "__main__":
     MY_HOST = "localhost"
     MY_USER = sys.argv[1]
@@ -16,3 +14,6 @@ if __name__ == "__main__":
     curs.execute("SELECT * FROM `states` ORDER BY `id` ASC")
     for state in curs.fetchall():
         print(state)
+
+    curs.close()
+    db.close()
