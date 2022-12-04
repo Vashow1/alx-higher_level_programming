@@ -14,9 +14,8 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host=MY_HOST, user=MY_USER, passwd=MY_PASS,
                          db=MY_DB)
     cur = db.cursor()
-    cur.execute('SELECT * FROM states WHERE `name` LIKE "N%"'
+    cur.execute('SELECT * FROM states'
                 + ' ORDER BY `id` ASC')
-    for row in cur.fetchall():
-        print(row)
+    [print(row) for row in cur.fetchall() if row[1][0] == 'N']
     cur.close()
     db.close()
