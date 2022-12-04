@@ -19,3 +19,5 @@ if __name__ == "__main__":
                 + ' ORDER BY `id` ASC')
     for row in cur.fetchall():
         print(row)
+    cur.close()
+    db.close()
