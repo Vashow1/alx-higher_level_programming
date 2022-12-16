@@ -7,7 +7,19 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    dictio = {'q': sys.argv[1]}
-    response = requests.get(url, params=dictio)
-    json_response = response.json()
-    print(json_response)
+    if len(sys.argv) > 1:
+        letter = sys.argv[1]
+    else:
+        letter = ""
+
+    url = 'http://0.0.0.0:5000/search_user'
+    dictio = {'q': letter}
+    response = requests.post(url, data=dictio)
+    try:
+        json_response = response.json()
+        if len(json_response) == 0:
+            print("No result")
+        else:
+            print(f"[{json_response.get('id')}] {json_response.get('name')}")
+    except ValueError:
+        print("Not a vaid JSON")
