@@ -22,4 +22,4 @@ if __name__ == "__main__":
         else:
             print(f"[{json_response.get('id')}] {json_response.get('name')}")
     except ValueError:
-        print("Not a vaid JSON")
+        print("Not a valid JSON")
